@@ -25,8 +25,13 @@ public class PlayerController : MonoBehaviour
 
         Vector3[] corners = new Vector3[4];
 
-
         float distanceFromPlayer = Vector3.Distance(transform.position, TrackedCamera.transform.position);
+
+        Debug.DrawRay(
+            TrackedCamera.transform.position,
+            TrackedCamera.transform.forward * distanceFromPlayer,
+            Color.red
+        );
 
         TrackedCamera.CalculateFrustumCorners(
             new Rect(0, 0, 1, 1),
