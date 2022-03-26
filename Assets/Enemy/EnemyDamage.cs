@@ -4,11 +4,10 @@ public class EnemyDamage : MonoBehaviour
 {
     public GameObject playerSword;
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject == playerSword)
         {
-            // playerSword.SetActive(true);
             // Destroy(gameObject);
             Debug.Log("Enemy hit by sword");
         }
